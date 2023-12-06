@@ -4,15 +4,19 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 
+// Import the functions you need from the SDKs you need
+
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCKdxj8PVtUs5Y7m2NMqKVIZcdYFaiuEeY",
-  authDomain: "netflixgpt-8cfb3.firebaseapp.com",
-  projectId: "netflixgpt-8cfb3",
-  storageBucket: "netflixgpt-8cfb3.appspot.com",
-  messagingSenderId: "450130528573",
-  appId: "1:450130528573:web:6a9a14119d76807bd55d54",
-  measurementId: "G-16T3M2HNBH"
+  apiKey: "AIzaSyB0BGW989FwSWvcTgfAHJixtNqUt9Q_ZuY",
+  authDomain: "newsapp-60364.firebaseapp.com",
+  projectId: "newsapp-60364",
+  storageBucket: "newsapp-60364.appspot.com",
+  messagingSenderId: "219837790200",
+  appId: "1:219837790200:web:dee8f2e1ea7c6bcc90c80d"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
