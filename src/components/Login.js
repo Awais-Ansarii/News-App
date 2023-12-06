@@ -11,11 +11,14 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { USER_AVATAR } from "../utils/constants";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({setLogin}) => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const name = useRef(null);
   const email = useRef(null);
@@ -49,6 +52,8 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
+              setLogin(true)
+              navigate('/browse')
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -69,6 +74,8 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          setLogin(true)
+          navigate('/browse')
         })
         .catch((error) => {
           const errorCode = error.code;

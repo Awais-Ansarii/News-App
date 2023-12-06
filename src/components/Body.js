@@ -1,20 +1,28 @@
-
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, useNavigate } from "react-router-dom";
 import Browse from "./Browse";
 import Login from "./Login";
 import { RouterProvider } from "react-router-dom";
 
-const Body = () => {
+
+
+
+
+
+const Body = ({isLogin, setLogin}) => {
+  
+  
   const appRouter = createBrowserRouter([
     {
       path: "/",
-      element: <Login />,
+      element: <Login isLogin={isLogin} setLogin={setLogin}/>,
     },
     {
       path: "/browse",
-      element: <Browse />,
+      element: <Browse isLogin={isLogin} setLogin={setLogin}/>,
     },
   ]);
+
+ 
 
   return (
     <div>
